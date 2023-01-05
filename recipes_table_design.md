@@ -24,20 +24,20 @@ I'd like to give a rating to each of the recipes (from 1 to 5).
 ```
 Nouns:
 
-album, title, release year
+recipe name, time, rating
 ```
 
 ## 2. Infer the Table Name and Columns
 
 Put the different nouns in this table. Replace the example with your own nouns.
 
-| Record                | Properties          |
-| --------------------- | ------------------  |
-| album                 | title, release year
+| Record                | Properties                        |
+| --------------------- | --------------------------------  |
+| recipes               | recipe_name, cooking_time, rating
 
-Name of the table (always plural): `albums` 
+Name of the table (always plural): `recipes` 
 
-Column names: `title`, `release_year`
+Column names: `recipe_name`, `cooking_time`, `rating`
 
 ## 3. Decide the column types.
 
@@ -51,22 +51,24 @@ Remember to **always** have the primary key `id` as a first column. Its type wil
 # EXAMPLE:
 
 id: SERIAL
-title: text
-release_year: int
+recipe_name: text
+cooking_time: int
+rating: int
 ```
 
 ## 4. Write the SQL.
 
 ```sql
 -- EXAMPLE
--- file: albums_table.sql
+-- file: arecipes.sql
 
 -- Replace the table name, columm names and types.
 
-CREATE TABLE albums (
+CREATE TABLE recipes (
   id SERIAL PRIMARY KEY,
-  title text,
-  release_year int
+  recipe_name text,
+  cooking_time int,
+  rating int
 );
 ```
 
